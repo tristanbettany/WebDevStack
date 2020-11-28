@@ -16,6 +16,42 @@ services:
       - php74
       - mysql
 
+  php70:
+    container_name: php70
+    build:
+      context: ./containers/php/70
+    restart: 'always'
+    volumes:
+      - ${REPO_DIR}:/www
+      - ./containers/php/70/php.ini:/usr/local/etc/php/conf.d/php.ini
+
+  php71:
+    container_name: php71
+    build:
+      context: ./containers/php/71
+    restart: 'always'
+    volumes:
+      - ${REPO_DIR}:/www
+      - ./containers/php/71/php.ini:/usr/local/etc/php/conf.d/php.ini
+
+  php72:
+    container_name: php72
+    build:
+      context: ./containers/php/72
+    restart: 'always'
+    volumes:
+      - ${REPO_DIR}:/www
+      - ./containers/php/72/php.ini:/usr/local/etc/php/conf.d/php.ini
+
+  php73:
+    container_name: php73
+    build:
+      context: ./containers/php/73
+    restart: 'always'
+    volumes:
+      - ${REPO_DIR}:/www
+      - ./containers/php/73/php.ini:/usr/local/etc/php/conf.d/php.ini
+
   php74:
     container_name: php74
     build:

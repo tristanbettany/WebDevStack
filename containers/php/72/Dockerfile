@@ -1,4 +1,4 @@
-FROM php:7.4-fpm
+FROM php:7.2-fpm
 
 ARG DEBIAN_FRONTEND=noninteractive
 
@@ -17,7 +17,7 @@ RUN pecl install xdebug mcrypt imagick memcached
 RUN docker-php-ext-enable xdebug mcrypt imagick memcached
 
 # Install GD
-RUN docker-php-ext-configure gd --with-freetype --with-webp --with-jpeg
+RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-png-dir=/usr/include/ --with-webp-dir=/usr/include/ --with-jpeg-dir=/usr/include/
 RUN docker-php-ext-install -j$(nproc) gd
 
 # Install PHP Extensions not installed by default
