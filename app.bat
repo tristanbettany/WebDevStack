@@ -1,6 +1,6 @@
 @ECHO OFF
 
-for /f "delims== tokens=1,2" %%G in (.env) do set %%G=%%H
+FOR /f "delims== tokens=1,2" %%G IN (.env) DO SET %%G=%%H
 
 CALL :CASE_%1
 IF ERRORLEVEL 1 CALL :DEFAULT_CASE
@@ -54,7 +54,7 @@ EXIT /B
     docker container exec -w %WORKING_DIR% %CLI_PHP_CONTAINER% composer dump-autoload
     GOTO END_CASE
 
-:CASE_key
+:CASE_laravel-key
     ECHO Generating Key...
     docker container exec -w %WORKING_DIR% %CLI_PHP_CONTAINER% php artisan key:generate
     GOTO END_CASE
