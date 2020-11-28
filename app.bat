@@ -59,6 +59,22 @@ EXIT /B
     docker container exec -w %WORKING_DIR% %CLI_PHP_CONTAINER% php artisan key:generate
     GOTO END_CASE
 
+:CASE_web-stop
+    ECHO Stopping Nginx...
+    docker-compose stop nginx
+    GOTO END_CASE
+
+:CASE_web-start
+    ECHO Starting Nginx...
+    docker-compose start nginx
+    GOTO END_CASE
+
+:CASE_web-restart
+    ECHO Re-starting Nginx...
+    docker-compose stop nginx
+    docker-compose start nginx
+    GOTO END_CASE
+
 :CASE_bash
     docker container exec -it -w %WORKING_DIR% %CLI_PHP_CONTAINER% bash
     GOTO END_CASE
