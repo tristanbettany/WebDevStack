@@ -47,7 +47,9 @@ As default the SSL will show a warning in your browser when visiting your projec
  If for some reason you need to regenerate them the command is this:
  
 ```
-openssl req -x509 -nodes -days 365 -subj "/C=CA/ST=QC/O=Company, Inc./CN=*.dev.test" -addext "subjectAltName=DNS:*.dev.test" -newkey rsa:2048 -keyout containers/nginx/ssl/ssl.key -out containers/nginx/ssl/ssl.crt
+openssl req -x509 -nodes -days 365 -subj "/C=CA/ST=QC/O=Company, Inc./CN=*.dev.test" \ 
+-addext "subjectAltName=DNS:*.dev.test" -newkey rsa:2048 -keyout containers/nginx/ssl/ssl.key \
+-out containers/nginx/ssl/ssl.crt
 ```
 
 Dont forget to also export the new `ssl.cer` file from the browser after doing that and re-import it to `Trusted Root Certification Authorities`
