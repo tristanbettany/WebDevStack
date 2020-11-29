@@ -19,18 +19,19 @@ A web development stack using linux docker containers catered towards windows ho
 
 ## Daily Usage
 
-- Depending on what project you are working on at the time change the `WORKING_DIR` and the `CLI_PHP_CONTAINER` for the phjp version you need in the `.env` file
-    - You DO NOT! need to rebuild the stack after this, you only need to do `.\app.bat restart`
+- Depending on what project you are working on at the time change the `WORKING_DIR` and the `CLI_PHP_CONTAINER` for the php version you need in the `.env` file
+    - You DO NOT! need to rebuild or restart the stack after this, it is soley used to direct commands in `app.bat` to the right locations
 - `.\app.bat start` to bring up the stack
 - `.\app.bat stop` to bring down the stack
 - You can access the php containers cli with `.\app.bat bash`
+- You might add new projects and not want to re-build, see below on how, its quick and easy
 
 ## Adding new vhosts after building
 
 - Create your vhost for your your project in `containers\nginx\vhosts`
     - Your domain should be a subdomain of `dev.test`, see `welcome.conf` for an example
     - PHP FPM in your vhost should point towards the correct container for the php version you want, see `welcome.conf` for an example
-- Run `.\app.bat restart`
+- Just run `.\app.bat restart`, no need to waste your time rebuilding
 
 ## SSL
 
