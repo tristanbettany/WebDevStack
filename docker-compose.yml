@@ -26,7 +26,7 @@ services:
     volumes:
       - ${REPO_DIR}:/www
       - ./containers/php/70/php.ini:/usr/local/etc/php/conf.d/php.ini
-      - ${SSH_DIR}:/root/.ssh
+      - ${SSH_DIR}:/root/.ssh:ro
 
   php71:
     container_name: php71
@@ -36,7 +36,7 @@ services:
     volumes:
       - ${REPO_DIR}:/www
       - ./containers/php/71/php.ini:/usr/local/etc/php/conf.d/php.ini
-      - ${SSH_DIR}:/root/.ssh
+      - ${SSH_DIR}:/root/.ssh:ro
 
   php72:
     container_name: php72
@@ -46,7 +46,7 @@ services:
     volumes:
       - ${REPO_DIR}:/www
       - ./containers/php/72/php.ini:/usr/local/etc/php/conf.d/php.ini
-      - ${SSH_DIR}:/root/.ssh
+      - ${SSH_DIR}:/root/.ssh:ro
 
   php73:
     container_name: php73
@@ -56,7 +56,7 @@ services:
     volumes:
       - ${REPO_DIR}:/www
       - ./containers/php/73/php.ini:/usr/local/etc/php/conf.d/php.ini
-      - ${SSH_DIR}:/root/.ssh
+      - ${SSH_DIR}:/root/.ssh:ro
 
   php74:
     container_name: php74
@@ -66,7 +66,7 @@ services:
     volumes:
       - ${REPO_DIR}:/www
       - ./containers/php/74/php.ini:/usr/local/etc/php/conf.d/php.ini
-      - ${SSH_DIR}:/root/.ssh
+      - ${SSH_DIR}:/root/.ssh:ro
 
   mysql:
     container_name: mysql
