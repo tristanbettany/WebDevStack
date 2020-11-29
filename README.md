@@ -26,7 +26,7 @@ A web development stack using linux docker containers catered towards windows ho
 - You can access the php containers cli with `.\app.bat bash`
 - You might add new projects and not want to re-build, see below on how, its quick and easy
 
-## Adding new vhosts after building
+## Adding new vhosts without re-building the stack
 
 - Create your vhost for your your project in `containers\nginx\vhosts`
     - Your domain should be a subdomain of `dev.test`, see `welcome.conf` for an example
