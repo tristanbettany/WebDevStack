@@ -7,6 +7,7 @@ A web development stack using linux docker containers catered towards windows ho
 - nginx - v1.19
 - mysql - v8.0
 - php - v7.0, v7.1, v7.2, v7.3, v7.4
+- mailhog - latest
 
 ## Setup
 
@@ -25,6 +26,14 @@ A web development stack using linux docker containers catered towards windows ho
 - `.\app.bat stop` to bring down the stack
 - You can access the php containers cli with `.\app.bat bash`
 - You might add new projects and not want to re-build, see below on how, its quick and easy
+
+## Sending Email
+
+Mailhog is used as an SMTP server. By setting your applications SMTP server to the details below you can send an email to anyone and they will
+automatically be caught by mailhog. You can view the emails in the UI at `localhost:8025` 
+
+- SMTP host: `mail`
+- SMTP port: `1025`
 
 ## Adding new vhosts without re-building the stack
 
