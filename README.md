@@ -35,6 +35,8 @@ automatically be caught by mailhog. You can view the emails in the UI at `localh
 - SMTP host: `mail`
 - SMTP port: `1025`
 
+(TIP: mailhog has an API too which you should be able to use in tests to assert if an email was sent and recieved)
+
 ## Adding new vhosts without re-building the stack
 
 - Create your vhost for your your project in `containers\nginx\vhosts`
