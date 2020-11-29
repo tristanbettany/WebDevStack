@@ -12,6 +12,8 @@ services:
     volumes:
       - ${REPO_DIR}:/www
       - ./containers/nginx/vhosts:/etc/nginx/conf.d
+      - ./containers/nginx/ssl/ssl.crt:/etc/nginx/ssl.crt
+      - ./containers/nginx/ssl/ssl.key:/etc/nginx/ssl.key
     links:
       - php74
       - mysql
