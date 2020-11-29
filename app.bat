@@ -79,6 +79,10 @@ EXIT /B
     docker container exec -it -w %WORKING_DIR% %CLI_PHP_CONTAINER% bash
     GOTO END_CASE
 
+:CASE_bash-node
+    docker container exec -it -w %WORKING_DIR% %CLI_NODE_CONTAINER% bash
+    GOTO END_CASE
+
 :DEFAULT_CASE
     ECHO Unknown function %1
     GOTO END_CASE

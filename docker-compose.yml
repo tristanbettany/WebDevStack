@@ -90,5 +90,16 @@ services:
       - 1025:1025
       - 8025:8025
 
+  node:
+    container_name: node
+    build:
+      context: ./containers/node
+    restart: 'always'
+    ports:
+      - 8080:8080
+    volumes:
+      - ${REPO_DIR}:/www
+      - ${SSH_DIR}:/root/.ssh:ro
+
 volumes:
   mysql_data:

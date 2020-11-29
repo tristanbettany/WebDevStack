@@ -8,6 +8,7 @@ A web development stack using linux docker containers catered towards windows ho
 - mysql - v8.0
 - php - v7.0, v7.1, v7.2, v7.3, v7.4
 - mailhog - latest
+- node - lts
 
 ## Setup
 
@@ -26,6 +27,7 @@ A web development stack using linux docker containers catered towards windows ho
 - `.\app.bat stop` to bring down the stack
 - You can access the php containers cli with `.\app.bat bash`
 - You might add new projects and not want to re-build, see below on how, its quick and easy
+- With a dedicated container for node you can access this by running `.\app.bat node-bash` and install/compile js with npm
 
 ## Sending Email
 
