@@ -81,5 +81,14 @@ services:
     volumes:
       - mysql_data:/var/lib/mysql
 
+  mail:
+    container_name: mail
+    build:
+      context: ./containers/mail
+    restart: 'always'
+    ports:
+      - 1025:1025
+      - 8025:8025
+
 volumes:
   mysql_data:
