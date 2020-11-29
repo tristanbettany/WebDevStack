@@ -24,6 +24,7 @@ A web development stack using linux docker containers catered towards windows ho
 - Create your vhost for your your project in `containers\nginx\vhosts`
     - Your domain should be a subdomain of `dev.test`, see `welcome.conf` for an example
     - PHP FPM in your vhost should point towards the correct container for the php version you want, see `welcome.conf` for an example
+- Run `.\app.bat restart`
 
 ## SSL
 
