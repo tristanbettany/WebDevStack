@@ -2,6 +2,12 @@
 
 A web development stack using linux docker containers catered towards windows hosts, to prove you dont need a macintosh to develop on. ;)
 
+## Current Stack Information
+
+- nginx - v1.19
+- mysql - v8.0
+- php - v7.0, v7.1, v7.2, v7.3, v7.4
+
 ## Setup
 
 - Point your `REPO_DIR` at a relative path to a folder containing your projects, this could be outside of this repo e.g. `../Projects`
