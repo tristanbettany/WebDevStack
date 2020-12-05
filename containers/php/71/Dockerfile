@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     apt-utils build-essential libpng-dev libjpeg62-turbo-dev libxml2-dev \
     libgd3 libgd-dev libwebp-dev libpq-dev libmagickwand-dev libfreetype6-dev \
     libhiredis-dev libmemcached-dev pkg-config libcurl4-gnutls-dev zlib1g-dev libicu-dev libedit-dev \
-    libncurses5-dev libtidy-dev libzip-dev nghttp2 msmtp msmtp-mta git curl zip openssl libonig-dev && \
+    libncurses5-dev libtidy-dev libzip-dev nghttp2 msmtp msmtp-mta git curl zip openssl libonig-dev openssh-server ssh vim && \
     apt-get -y autoremove && apt-get -y clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
