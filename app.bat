@@ -35,6 +35,7 @@ EXIT /B
     docker-compose down
     ECHO Starting...
     docker-compose up -d
+    GOTO CASE_keys
     GOTO END_CASE
 
 :CASE_stop
@@ -45,6 +46,7 @@ EXIT /B
 :CASE_start
     ECHO Starting...
     docker-compose up -d
+    GOTO CASE_keys
     GOTO END_CASE
 
 :CASE_install
