@@ -99,7 +99,7 @@ services:
       - 8080:8080
     volumes:
       - ${REPO_DIR}:/www
-      - ${SSH_DIR}:/root/.ssh:ro
+      - ${SSH_DIR}:/ssh:ro
 
 volumes:
   mysql_data:

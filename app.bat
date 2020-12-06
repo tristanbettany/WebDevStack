@@ -28,6 +28,7 @@ EXIT /B
     docker container exec -w /root php72 ./keys.sh 
     docker container exec -w /root php73 ./keys.sh 
     docker container exec -w /root php74 ./keys.sh 
+    docker container exec -w /root node ./keys.sh 
     GOTO END_CASE
 
 :CASE_restart
