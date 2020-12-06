@@ -26,4 +26,9 @@ RUN docker-php-ext-install mysqli pdo pdo_mysql zip bcmath intl tidy opcache xml
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
+COPY keys.sh /root
+
+RUN mkdir -p /root/.ssh && \
+    chmod 0700 /root/.ssh
+
 CMD ["php-fpm"]

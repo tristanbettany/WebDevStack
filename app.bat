@@ -13,11 +13,21 @@ EXIT /B
     docker-compose down -v
     ECHO Building...
     docker-compose up -d --build
+    GOTO CASE_keys
     GOTO END_CASE
 
 :CASE_build
     ECHO Building...
     docker-compose up -d --build
+    GOTO CASE_keys
+    GOTO END_CASE
+
+:CASE_keys
+    docker container exec -w /root php70 ./keys.sh 
+    docker container exec -w /root php71 ./keys.sh 
+    docker container exec -w /root php72 ./keys.sh 
+    docker container exec -w /root php73 ./keys.sh 
+    docker container exec -w /root php74 ./keys.sh 
     GOTO END_CASE
 
 :CASE_restart
