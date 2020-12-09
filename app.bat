@@ -8,8 +8,13 @@ IF ERRORLEVEL 1 CALL :DEFAULT_CASE
 ECHO Done!
 EXIT /B
 
+:CASE_remove
+    ECHO Removing...
+    docker-compose down -v
+    GOTO END_CASE
+
 :CASE_rebuild
-    ECHO Stopping...
+    ECHO Removing...
     docker-compose down -v
     ECHO Building...
     docker-compose up -d --build
