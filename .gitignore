@@ -1,2 +1,4 @@
 .idea
 .env
+containers/nginx/vhosts/*.conf
+!containers/nginx/vhosts/welcome.conf
