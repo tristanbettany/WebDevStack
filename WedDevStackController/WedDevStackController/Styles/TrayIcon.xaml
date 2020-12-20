@@ -1,0 +1,55 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:tb="http://www.hardcodet.net/taskbar"
+                    xmlns:vm="clr-namespace:WedDevStackController.ViewModels"
+                    xmlns:local="clr-namespace:WedDevStackController.Styles">
+
+    <ContextMenu x:Shared="false" x:Key="TrayIconMenu">
+        <MenuItem Header="Stack">
+            <MenuItem Header="Build Stack" Command="{Binding PlaceholderCommand}" ToolTip="Build the stack"/>
+            <MenuItem Header="Rebuild Stack" Command="{Binding PlaceholderCommand}" ToolTip="Rebuild the stack"/>
+            <Separator />
+            <MenuItem Header="Start Stack" Command="{Binding PlaceholderCommand}" ToolTip="Start a stopped stack"/>
+            <MenuItem Header="Stop Stack" Command="{Binding PlaceholderCommand}" ToolTip="Stop a started stack"/>
+            <MenuItem Header="Restart Stack" Command="{Binding PlaceholderCommand}" ToolTip="Restart a stack"/>
+            <MenuItem Header="Remove Stack" Command="{Binding PlaceholderCommand}" ToolTip="Stop a stack and remove attached volumes"/>
+        </MenuItem>
+        <MenuItem Header="Containers">
+            <MenuItem Header="Start Nginx Container" Command="{Binding PlaceholderCommand}" ToolTip="Start a stopped Nginx container"/>
+            <MenuItem Header="Stop Nginx Container" Command="{Binding PlaceholderCommand}" ToolTip="Stop a started Nginx container"/>
+            <MenuItem Header="Restart Nginx Container" Command="{Binding PlaceholderCommand}" ToolTip="Restart an Nginx container"/>
+            <Separator />
+            <MenuItem Header="Open PHP Container" Command="{Binding OpenPHPContainerCommand}" ToolTip="Open a bash prompt for the active PHP container"/>
+            <MenuItem Header="Open Node Container" Command="{Binding PlaceholderCommand}" ToolTip="Open a bash prompt for the active node container"/>
+            <Separator />
+            <MenuItem Header="Copy SSH Keys" Command="{Binding PlaceholderCommand}" ToolTip="Copy SSH keys from mounted volume to root user in containers"/>
+        </MenuItem>
+        <MenuItem Header="Composer">
+            <MenuItem Header="Install" Command="{Binding PlaceholderCommand}" ToolTip="Install composer dependancies for active project"/>
+            <MenuItem Header="Update" Command="{Binding PlaceholderCommand}" ToolTip="Update composer dependancies for active project"/>
+            <MenuItem Header="Dump" Command="{Binding PlaceholderCommand}" ToolTip="Dump composer autoload for active project"/>
+        </MenuItem>
+        <MenuItem Header="Laravel">
+            <MenuItem Header="KeyGen" Command="{Binding PlaceholderCommand}" ToolTip="Generate a key for active laravel project"/>
+        </MenuItem>
+
+        <Separator />
+        <MenuItem Header="Show Window" Command="{Binding ShowMainWindowCommand}" ToolTip="Show application window"/>
+        <MenuItem Header="Hide Window" Command="{Binding HideMainWindowCommand}" ToolTip="Hide application window"/>
+        <Separator />
+        <MenuItem Header="Exit" Command="{Binding ExitApplicationCommand}" ToolTip="Exit application"/>
+    </ContextMenu>
+    
+    <tb:TaskbarIcon 
+            x:Key="TrayIcon"
+            IconSource="../Assets/Icons/Icon.ico" 
+            ToolTipText="WebDevStackController"
+            DoubleClickCommand="{Binding ToggleMainWindowCommand}"
+            ContextMenu="{StaticResource TrayIconMenu}">
+
+        <tb:TaskbarIcon.DataContext>
+            <vm:TrayIconViewModel />
+        </tb:TaskbarIcon.DataContext>
+    </tb:TaskbarIcon>
+
+</ResourceDictionary>
