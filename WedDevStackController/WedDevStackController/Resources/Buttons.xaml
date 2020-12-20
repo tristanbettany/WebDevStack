@@ -1,6 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:WedDevStackController.Styles" xmlns:System="clr-namespace:System;assembly=mscorlib">
+                    xmlns:local="clr-namespace:WedDevStackController.Resources" 
+                    xmlns:System="clr-namespace:System;assembly=mscorlib">
 
     <System:Double x:Key="ExampleButtonFontSize">40</System:Double>
     <Thickness x:Key="ExampleButtonMargin" Left="10" Top="10" Right="10" Bottom="10" />

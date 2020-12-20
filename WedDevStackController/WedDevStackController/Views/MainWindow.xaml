@@ -6,10 +6,50 @@
         xmlns:local="clr-namespace:WedDevStackController.Views"
         xmlns:tb="http://www.hardcodet.net/taskbar" 
         mc:Ignorable="d"
-        Title="WebDevStackController" Height="250" Width="800">
+        Title="WebDevStackController" Height="400" Width="800">
 
-    <StackPanel VerticalAlignment="Center">
-        
-    </StackPanel>
+    <Grid>
+        <StackPanel>
+            <Grid Margin="20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label x:Name="EnvFilePathLabel"
+                    Content=".env file path:"
+                    Grid.Column="0">
+                </Label>
+                <TextBox x:Name="EnvFilePathTextBox"
+                    FontSize="20"
+                    Text="{Binding EnvFilePath, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="7">
+                </TextBox>
+            </Grid>
+
+            <Label x:Name="EnvFileLabel"
+                Content=".env file content:"
+                Margin="20, 0">
+            </Label>
+            <TextBox x:Name="EnvFileTextBox"
+                TextWrapping="Wrap"
+                AcceptsReturn="True"
+                Margin="20, 0"
+                FontSize="20"
+                Height="250"
+                VerticalScrollBarVisibility="Visible"
+                Text="{Binding EnvFile, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+            </TextBox>
+        </StackPanel>
+    </Grid>
 
 </Window>

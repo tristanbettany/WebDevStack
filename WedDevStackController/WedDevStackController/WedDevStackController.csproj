@@ -208,15 +208,15 @@
     </Compile>
     <Compile Include="Common\Commands\RelayCommand.cs" />
     <Compile Include="Common\ViewModels\BaseViewModel.cs" />
-    <Page Include="Styles\Buttons.xaml">
+    <Page Include="Resources\Buttons.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Styles\TrayIcon.xaml">
+    <Page Include="Resources\TrayIcon.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Styles\Colors.xaml">
+    <Page Include="Resources\Colors.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

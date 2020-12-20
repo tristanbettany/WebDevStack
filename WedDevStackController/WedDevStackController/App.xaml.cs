@@ -21,7 +21,14 @@ namespace WedDevStackController
         {
             base.OnStartup(e);
 
-            Env.TraversePath().Load();
+            try
+            {
+                Env.TraversePath().Load();
+            }
+            catch (Sprache.ParseException exception)
+            {
+            
+            }
 
             taskbarIcon = (TaskbarIcon)FindResource("TrayIcon");
         }

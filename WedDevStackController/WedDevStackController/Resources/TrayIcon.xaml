@@ -2,7 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:tb="http://www.hardcodet.net/taskbar"
                     xmlns:vm="clr-namespace:WedDevStackController.ViewModels"
-                    xmlns:local="clr-namespace:WedDevStackController.Styles">
+                    xmlns:local="clr-namespace:WedDevStackController.Resources">
 
     <ContextMenu x:Shared="false" x:Key="TrayIconMenu">
         <MenuItem Header="Stack">
@@ -20,7 +20,7 @@
             <MenuItem Header="Restart Nginx Container" Command="{Binding PlaceholderCommand}" ToolTip="Restart an Nginx container"/>
             <Separator />
             <MenuItem Header="Open PHP Container" Command="{Binding OpenPHPContainerCommand}" ToolTip="Open a bash prompt for the active PHP container"/>
-            <MenuItem Header="Open Node Container" Command="{Binding PlaceholderCommand}" ToolTip="Open a bash prompt for the active node container"/>
+            <MenuItem Header="Open Node Container" Command="{Binding OpenNodeContainerCommand}" ToolTip="Open a bash prompt for the active node container"/>
             <Separator />
             <MenuItem Header="Copy SSH Keys" Command="{Binding PlaceholderCommand}" ToolTip="Copy SSH keys from mounted volume to root user in containers"/>
         </MenuItem>

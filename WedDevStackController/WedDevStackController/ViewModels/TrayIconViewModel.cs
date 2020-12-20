@@ -18,6 +18,7 @@ namespace WedDevStackController.ViewModels
         public RelayCommand PlaceholderCommand { get; set; }
 
         public RelayCommand OpenPHPContainerCommand { get; set; }
+        public RelayCommand OpenNodeContainerCommand { get; set; }
 
         public TrayIconViewModel()
         {
@@ -29,6 +30,7 @@ namespace WedDevStackController.ViewModels
             PlaceholderCommand = new RelayCommand(Placeholder);
 
             OpenPHPContainerCommand = new RelayCommand(OpenPHPContainer);
+            OpenNodeContainerCommand = new RelayCommand(OpenNodeContainer);
         }
 
         private void OpenPHPContainer(object obj)
@@ -36,6 +38,14 @@ namespace WedDevStackController.ViewModels
             Process.Start(
                 "powershell.exe",
                 "docker container exec -it -w " + Env.GetString("WORKING_DIR") + " " + Env.GetString("CLI_PHP_CONTAINER") + " bash"
+            );
+        }
+
+        private void OpenNodeContainer(object obj)
+        {
+            Process.Start(
+                "powershell.exe",
+                "docker container exec -it -w " + Env.GetString("WORKING_DIR") + " " + Env.GetString("CLI_NODE_CONTAINER") + " bash"
             );
         }
 
