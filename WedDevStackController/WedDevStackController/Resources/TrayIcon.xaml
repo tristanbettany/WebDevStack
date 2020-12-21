@@ -6,31 +6,35 @@
 
     <ContextMenu x:Shared="false" x:Key="TrayIconMenu">
         <MenuItem Header="Stack">
-            <MenuItem Header="Build Stack" Command="{Binding PlaceholderCommand}" ToolTip="Build the stack"/>
-            <MenuItem Header="Rebuild Stack" Command="{Binding PlaceholderCommand}" ToolTip="Rebuild the stack"/>
+            <MenuItem Header="Build Stack" Command="{Binding BuildStackCommand}" ToolTip="Build the stack"/>
+            <MenuItem Header="Rebuild Stack" Command="{Binding RebuildStackCommand}" ToolTip="Rebuild the stack"/>
             <Separator />
-            <MenuItem Header="Start Stack" Command="{Binding PlaceholderCommand}" ToolTip="Start a stopped stack"/>
-            <MenuItem Header="Stop Stack" Command="{Binding PlaceholderCommand}" ToolTip="Stop a started stack"/>
-            <MenuItem Header="Restart Stack" Command="{Binding PlaceholderCommand}" ToolTip="Restart a stack"/>
-            <MenuItem Header="Remove Stack" Command="{Binding PlaceholderCommand}" ToolTip="Stop a stack and remove attached volumes"/>
+            <MenuItem Header="Start Stack" Command="{Binding StartStackCommand}" ToolTip="Start a stopped stack"/>
+            <MenuItem Header="Stop Stack" Command="{Binding StopStackCommand}" ToolTip="Stop a started stack"/>
+            <MenuItem Header="Restart Stack" Command="{Binding RestartStackCommand}" ToolTip="Restart a stack"/>
+            <MenuItem Header="Remove Stack" Command="{Binding RemoveStackCommand}" ToolTip="Stop a stack and remove attached volumes"/>
         </MenuItem>
         <MenuItem Header="Containers">
-            <MenuItem Header="Start Nginx Container" Command="{Binding PlaceholderCommand}" ToolTip="Start a stopped Nginx container"/>
-            <MenuItem Header="Stop Nginx Container" Command="{Binding PlaceholderCommand}" ToolTip="Stop a started Nginx container"/>
-            <MenuItem Header="Restart Nginx Container" Command="{Binding PlaceholderCommand}" ToolTip="Restart an Nginx container"/>
+            <MenuItem Header="Start Nginx Container" Command="{Binding StartNginxCommand}" ToolTip="Start a stopped Nginx container"/>
+            <MenuItem Header="Stop Nginx Container" Command="{Binding StopNginxCommand}" ToolTip="Stop a started Nginx container"/>
+            <MenuItem Header="Restart Nginx Container" Command="{Binding RestartNginxCommand}" ToolTip="Restart an Nginx container"/>
             <Separator />
             <MenuItem Header="Open PHP Container" Command="{Binding OpenPHPContainerCommand}" ToolTip="Open a bash prompt for the active PHP container"/>
             <MenuItem Header="Open Node Container" Command="{Binding OpenNodeContainerCommand}" ToolTip="Open a bash prompt for the active node container"/>
             <Separator />
-            <MenuItem Header="Copy SSH Keys" Command="{Binding PlaceholderCommand}" ToolTip="Copy SSH keys from mounted volume to root user in containers"/>
+            <MenuItem Header="Copy SSH Keys" Command="{Binding CopySSHKeysCommand}" ToolTip="Copy SSH keys from mounted volume to root user in containers"/>
         </MenuItem>
         <MenuItem Header="Composer">
-            <MenuItem Header="Install" Command="{Binding PlaceholderCommand}" ToolTip="Install composer dependancies for active project"/>
-            <MenuItem Header="Update" Command="{Binding PlaceholderCommand}" ToolTip="Update composer dependancies for active project"/>
-            <MenuItem Header="Dump" Command="{Binding PlaceholderCommand}" ToolTip="Dump composer autoload for active project"/>
+            <MenuItem Header="Install" Command="{Binding ComposerInstallCommand}" ToolTip="Install composer dependancies for active project"/>
+            <MenuItem Header="Update" Command="{Binding ComposerUpdateCommand}" ToolTip="Update composer dependancies for active project"/>
+            <MenuItem Header="Dump" Command="{Binding ComposerDumpCommand}" ToolTip="Dump composer autoload for active project"/>
+        </MenuItem>
+        <MenuItem Header="NPM">
+            <MenuItem Header="Install" Command="{Binding NpmInstallCommand}" ToolTip="Install npm dependancies for active project"/>
+            <MenuItem Header="Update" Command="{Binding NpmUpdateCommand}" ToolTip="Update npm dependancies for active project"/>
         </MenuItem>
         <MenuItem Header="Laravel">
-            <MenuItem Header="KeyGen" Command="{Binding PlaceholderCommand}" ToolTip="Generate a key for active laravel project"/>
+            <MenuItem Header="KeyGen" Command="{Binding LaravelKeygenCommand}" ToolTip="Generate a key for active laravel project"/>
         </MenuItem>
 
         <Separator />

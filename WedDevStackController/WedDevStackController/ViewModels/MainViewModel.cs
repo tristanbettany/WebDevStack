@@ -40,8 +40,7 @@ namespace WedDevStackController.ViewModels
         {
             _window = window;
 
-            string userPath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
-            EnvFilePath = userPath + "\\Code\\WebDevStack\\.env";
+            EnvFilePath = Env.GetString("THIS_DIR") + ".env";
             LoadEnvFile();
         }
 
