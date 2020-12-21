@@ -38,8 +38,7 @@
         </MenuItem>
 
         <Separator />
-        <MenuItem Header="Show Window" Command="{Binding ShowMainWindowCommand}" ToolTip="Show application window"/>
-        <MenuItem Header="Hide Window" Command="{Binding HideMainWindowCommand}" ToolTip="Hide application window"/>
+        <MenuItem Header="Settings" Command="{Binding ShowMainWindowCommand}" ToolTip="Modify .env file"/>
         <Separator />
         <MenuItem Header="Exit" Command="{Binding ExitApplicationCommand}" ToolTip="Exit application"/>
     </ContextMenu>
