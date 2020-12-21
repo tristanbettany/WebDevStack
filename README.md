@@ -74,3 +74,7 @@ openssl req -x509 -nodes -days 365 -subj "/C=CA/ST=QC/O=Company, Inc./CN=*.dev.t
 ```
 
 Dont forget to also export the new `ssl.cer` file from the browser after doing that and re-import it to `Trusted Root Certification Authorities`
+
+## Control Application
+
+Theres also a windows application to control the stack without having to run cli commands. This can be used by opening the solution in Visual Studio, and changing from debug to release, then building. You should then be able to use the executable from the release folder inside the solution directory.
