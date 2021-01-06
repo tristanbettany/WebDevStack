@@ -33,8 +33,14 @@
             <MenuItem Header="Install" Command="{Binding NpmInstallCommand}" ToolTip="Install npm dependancies for active project"/>
             <MenuItem Header="Update" Command="{Binding NpmUpdateCommand}" ToolTip="Update npm dependancies for active project"/>
         </MenuItem>
+        <MenuItem Header="Testing">
+            <MenuItem Header="PHPUnit" Command="{Binding PHPUnitCommand}" ToolTip="Run PHPUnit"/>
+            <MenuItem Header="Pest" Command="{Binding PestCommand}" ToolTip="Run Pest"/>
+        </MenuItem>
         <MenuItem Header="Laravel">
             <MenuItem Header="KeyGen" Command="{Binding LaravelKeygenCommand}" ToolTip="Generate a key for active laravel project"/>
+            <MenuItem Header="Migrate" Command="{Binding LaravelMigrateCommand}" ToolTip="Migrate the Database"/>
+            <MenuItem Header="Seed" Command="{Binding LaravelSeedCommand}" ToolTip="Seed the database"/>
         </MenuItem>
 
         <Separator />

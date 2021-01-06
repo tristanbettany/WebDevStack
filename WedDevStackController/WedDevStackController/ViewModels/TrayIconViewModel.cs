@@ -36,12 +36,17 @@ namespace WedDevStackController.ViewModels
         public RelayCommand ComposerDumpCommand { get; set; }
 
         public RelayCommand LaravelKeygenCommand { get; set; }
+        public RelayCommand LaravelMigrateCommand { get; set; }
+        public RelayCommand LaravelSeedCommand { get; set; }
 
         public RelayCommand NpmInstallCommand { get; set; }
         public RelayCommand NpmUpdateCommand { get; set; }
 
         public RelayCommand OpenPHPContainerCommand { get; set; }
         public RelayCommand OpenNodeContainerCommand { get; set; }
+
+        public RelayCommand PHPUnitCommand { get; set; }
+        public RelayCommand PestCommand { get; set; }
 
         public TrayIconViewModel()
         {
@@ -71,12 +76,33 @@ namespace WedDevStackController.ViewModels
             ComposerDumpCommand = new RelayCommand(ComposerDump);
 
             LaravelKeygenCommand = new RelayCommand(LaravelKeygen);
+            LaravelMigrateCommand = new RelayCommand(LaravelMigrate);
+            LaravelSeedCommand = new RelayCommand(LaravelSeed);
 
             NpmInstallCommand = new RelayCommand(NpmInstall);
             NpmUpdateCommand = new RelayCommand(NpmUpdate);
 
             OpenPHPContainerCommand = new RelayCommand(OpenPHPContainer);
             OpenNodeContainerCommand = new RelayCommand(OpenNodeContainer);
+
+            PHPUnitCommand = new RelayCommand(PHPUnit);
+            PestCommand = new RelayCommand(Pest);
+        }
+
+        private void PHPUnit(object obj)
+        {
+            Process.Start(
+                "powershell.exe",
+                "docker container exec -it -w " + Env.GetString("WORKING_DIR") + " " + Env.GetString("CLI_PHP_CONTAINER") + " vendor/bin/phpunit"
+            );
+        }
+
+        private void Pest(object obj)
+        {
+            Process.Start(
+                "powershell.exe",
+                "docker container exec -it -w " + Env.GetString("WORKING_DIR") + " " + Env.GetString("CLI_PHP_CONTAINER") + " vendor/bin/pest"
+            );
         }
 
         private void NpmInstall(object obj)
@@ -124,6 +150,22 @@ namespace WedDevStackController.ViewModels
             Process.Start(
                 "powershell.exe",
                 "docker container exec -it -w " + Env.GetString("WORKING_DIR") + " " + Env.GetString("CLI_PHP_CONTAINER") + " php artisan key:generate"
+            );
+        }
+
+        private void LaravelMigrate(object obj)
+        {
+            Process.Start(
+                "powershell.exe",
+                "docker container exec -it -w " + Env.GetString("WORKING_DIR") + " " + Env.GetString("CLI_PHP_CONTAINER") + " php artisan migrate"
+            );
+        }
+
+        private void LaravelSeed(object obj)
+        {
+            Process.Start(
+                "powershell.exe",
+                "docker container exec -it -w " + Env.GetString("WORKING_DIR") + " " + Env.GetString("CLI_PHP_CONTAINER") + " php artisan db:seed"
             );
         }
 
